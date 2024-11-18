@@ -1,0 +1,64 @@
+<clickhouse>
+   <remote_servers>
+        <test_cluster>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>clickhouse1</host>
+                    <port>9000</port>
+                    <user>default</user>
+                    <password>!CSNTA@l23E8</password>
+                </replica>
+                <replica>
+                    <host>clickhouse3</host>
+                    <port>9000</port>
+                    <user>default</user>
+                    <password>!CSNTA@l23E8</password>
+                </replica>
+            </shard>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>clickhouse2</host>
+                    <port>9000</port>
+                    <user>default</user>
+                    <password>!CSNTA@l23E8</password>
+                </replica>
+                <replica>
+                    <host>clickhouse4</host>
+                    <port>9000</port>
+                    <user>default</user>
+                    <password>!CSNTA@l23E8</password>
+                </replica>
+            </shard>
+        </test_cluster>
+    </remote_servers>
+
+    <zookeeper>
+        <node>
+            <host>clickhouse1</host>
+            <port>9181</port>
+        </node>
+        <node>
+            <host>clickhouse2</host>
+            <port>9181</port>
+        </node>
+         <node>
+            <host>clickhouse3</host>
+            <port>9181</port>
+        </node>
+        <node>
+            <host>clickhouse4</host>
+            <port>9181</port>
+        </node>
+    </zookeeper>
+
+     <macros>
+        <shard>1</shard>
+        <replica>1</replica>
+    </macros>
+
+    <remote_url_allow_hosts>
+        <host_regexp>.*</host_regexp>
+    </remote_url_allow_hosts>
+</clickhouse>

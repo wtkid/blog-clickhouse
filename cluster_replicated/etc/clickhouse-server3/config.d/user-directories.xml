@@ -1,0 +1,7 @@
+<clickhouse>
+    <user_directories>
+        <local_directory>
+            <path>/data/clickhouse/access/</path>
+        </local_directory>
+    </user_directories>
+</clickhouse>

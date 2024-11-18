@@ -1,0 +1,84 @@
+version: '3.8'
+services:
+  clickhouse1:
+    image: $IMG_CK
+    container_name: clickhouse1
+    hostname: clickhouse1
+    restart: always
+    ports:
+      - 18123:8123
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.utf8
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    volumes:
+      - $DIR_INSTALL/etc/clickhouse-server1/:/etc/clickhouse-server/
+      - $DIR_MID_DATA/clickhouse1/:/data/clickhouse
+      - $DIR_MID_LOG/clickhouse-server1/:/var/log/clickhouse-server/
+
+  clickhouse2:
+    image: $IMG_CK
+    container_name: clickhouse2
+    hostname: clickhouse2
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.utf8
+    ports:
+      - 28123:8123
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    volumes:
+      - $DIR_INSTALL/etc/clickhouse-server2/:/etc/clickhouse-server/
+      - $DIR_MID_DATA/clickhouse2/:/data/clickhouse
+      - $DIR_MID_LOG/clickhouse-server2/:/var/log/clickhouse-server/
+
+  clickhouse3:
+    image: $IMG_CK
+    container_name: clickhouse3
+    hostname: clickhouse3
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.utf8
+    ports:
+      - 38123:8123
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    volumes:
+      - $DIR_INSTALL/etc/clickhouse-server3/:/etc/clickhouse-server/
+      - $DIR_MID_DATA/clickhouse3/:/data/clickhouse
+      - $DIR_MID_LOG/clickhouse-server3/:/var/log/clickhouse-server/
+
+
+  clickhouse4:
+    image: $IMG_CK
+    container_name: clickhouse4
+    hostname: clickhouse4
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.utf8
+    ports:
+      - 48123:8123
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    volumes:
+      - $DIR_INSTALL/etc/clickhouse-server4/:/etc/clickhouse-server/
+      - $DIR_MID_DATA/clickhouse4/:/data/clickhouse
+      - $DIR_MID_LOG/clickhouse-server4/:/var/log/clickhouse-server/
+
+
+networks:
+  default:
+    name: test_net
+    external: true
