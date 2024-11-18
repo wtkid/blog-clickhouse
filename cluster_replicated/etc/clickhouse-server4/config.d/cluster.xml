@@ -7,13 +7,13 @@
                     <host>clickhouse1</host>
                     <port>9000</port>
                     <user>default</user>
-                    <password>!CSNTA@l23E8</password>
+                    <password>12345678910</password>
                 </replica>
                 <replica>
                     <host>clickhouse3</host>
                     <port>9000</port>
                     <user>default</user>
-                    <password>!CSNTA@l23E8</password>
+                    <password>12345678910</password>
                 </replica>
             </shard>
             <shard>
@@ -22,13 +22,13 @@
                     <host>clickhouse2</host>
                     <port>9000</port>
                     <user>default</user>
-                    <password>!CSNTA@l23E8</password>
+                    <password>12345678910</password>
                 </replica>
                 <replica>
                     <host>clickhouse4</host>
                     <port>9000</port>
                     <user>default</user>
-                    <password>!CSNTA@l23E8</password>
+                    <password>12345678910</password>
                 </replica>
             </shard>
         </test_cluster>
