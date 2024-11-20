@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  ck:
+    image: $IMG_CK
+    container_name: ck
+    hostname: ck
+    restart: always
+    ports:
+      - 18123:8123
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.utf8
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    volumes:
+      - $DIR_INSTALL/etc/clickhouse-server/:/etc/clickhouse-server/
+      - $DIR_MID_DATA/clickhouse/data/:/data/clickhouse
+      - $DIR_MID_DATA/clickhouse/data1/:/data1/clickhouse
+      - $DIR_MID_DATA/clickhouse/data11/:/data11/clickhouse
+      - $DIR_MID_DATA/clickhouse/data2/:/data2/clickhouse
+      - $DIR_MID_DATA/clickhouse/data22/:/data22/clickhouse
+      - $DIR_MID_LOG/clickhouse-server/:/var/log/clickhouse-server/
+
+ 
+networks:
+  default:
+    name: ck_test
+    external: true
